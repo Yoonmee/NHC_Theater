@@ -108,7 +108,7 @@ if(isset($_SESSION['user_id'])) {
       </div>
       <div class="form-group" id="inputPassword">
         Password:
-        <input class="form-control" type="text" name="Password">
+        <input class="form-control" type="password" name="Password">
       </div>
       <div class="form-group" id="inputName">
         Name:

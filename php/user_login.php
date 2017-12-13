@@ -27,8 +27,8 @@ else {
 }
 while(odbc_fetch_row($result))
 {
-  $ID = odbc_result($result, 1);
-  $PW = odbc_result($result, 2);
+$ID = odbc_result($result, 1);
+$PW = odbc_result($result, 2);
 $row = odbc_fetch_array($result);
 
   echo "$ID $PW";
@@ -45,9 +45,9 @@ else
 
 
 $_SESSION['user'] = $user;
-if()
+
 
 odbc_close($con);
 
-header("Refresh:0; url=../user/");
+//header("Refresh:0; url=../user/");
 ?>

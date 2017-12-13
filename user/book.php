@@ -42,9 +42,9 @@ if(!isset($_SESSION['user_id'])) {
   }
   </style>
 
-  <script>
+  <script src="http://code.jquery.com/jquery-1.10.2.js">
   $(function() {
-    //상영중인 영화들 갖고와서 select 태그에 추가
+    //상영중인 연극들 갖고와서 select 태그에 추가
     $.post('../php/query.php', {query: "SELECT * FROM NHC_SCREENINGPLAY"}, function(data, textStatus, xhr) {
       //alert("data: " + data + "\ntextStatus: " + textStatus + "\nxhr: " + xhr);
       console.log("data: ", data);

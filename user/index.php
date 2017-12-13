@@ -90,7 +90,7 @@ if(!isset($_SESSION['user_id'])) {
     <button class="btn btn-lg btn-primary btn-block" onclick="location.href='./book.php';">예매</button>
     <button class="btn btn-lg btn-primary btn-block" onclick="location.href='./book_list.php';">예매 내역 확인</button>
     <button class="btn btn-lg btn-danger btn-block" onclick="location.href='./book_cancel.php';">예매 취소</button>
-    <!-- <button class="btn btn-lg btn-success btn-block" onclick="location.href='./cash.php';">캐시 충전</button> -->
+    <button class="btn btn-lg btn-success btn-block" onclick="location.href='./cash.php';">캐시 충전</button>
   </div>
 
   <!--

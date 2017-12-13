@@ -45,7 +45,7 @@ if(!isset($_SESSION['user_id'])) {
 
   <script>
   function fill_cash() {
-    alert("hi");
+
     var fill = $('#fillcash');
     var in_cash = fill.val();
     if (in_cash <= 0) {

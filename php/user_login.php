@@ -43,10 +43,6 @@ if (!isset($user)) {
   echo "<script>alert('User Login failed.');history.back();</script>";
   exit;
 }
-else
-{
-  alert("Login Success");
-}
 
 odbc_close($con);
 

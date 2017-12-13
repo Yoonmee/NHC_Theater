@@ -36,10 +36,14 @@ function SendMail( $ToEmail, $MessageHTML, $MessageTEXT ) {
     return TRUE;
   }
 }
-
-$ToEmail = $_POST['user_email'];
-$ToName  = $_POST['user_name'];
-$MessageHTML = $_POST['user_name'].'예매내역';
+//
+// $ToEmail = $_POST['user_email'];
+// $ToName  = $_POST['user_name'];
+// $MessageHTML = $_POST['user_name'].'예매내역';
+// $MessageTEXT = "test";
+$ToEmail = "ymhwang119@naver.com";
+$ToName  = "yonnmee";
+$MessageHTML = "gg";
 $MessageTEXT = "test";
 
 

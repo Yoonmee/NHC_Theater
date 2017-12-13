@@ -61,6 +61,10 @@ if(isset($_SESSION['user'])) {
   </style>
 
   <script>
+    function goPrevPage() {
+      history.back();
+      return true;
+    }
   </script>
 </head>
 
@@ -97,7 +101,32 @@ if(isset($_SESSION['user'])) {
 
     <hr>
     <!-- 너맘대로 채워넣으세여 -->
-    <input type="text" name="ID" value="ID">
+    <form class="form-group" action="index.html" name="signupForm" method="post">
+
+      <div class="form-group" id="inputID">
+        ID:
+        <input class="form-control" type="text" name="ID">
+      </div>
+      <div class="form-group" id="inputPassword">
+        Password:
+        <input class="form-control" type="text" name="Password">
+      </div>
+      <div class="form-group" id="inputName">
+        Name:
+        <input class="form-control" type="text" name="Name">
+      </div>
+      <div class="form-group" id="inputPhone">
+        Phone:
+        <input class="form-control" type="text" name="Phone" placeholder="-를 빼고 입력하세요.">
+      </div>
+
+      <p align="center">
+        <input type="submit" value="회원가입" style="margin-right: 20px; width: 80px;">
+        <input type="reset" value="취소" onclick='return goPrevPage();' style="width: 80px;">
+      </p>
+    </form>
+
+
   </div>
 
   <!-- Bootstrap core JavaScript -->

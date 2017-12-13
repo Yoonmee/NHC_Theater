@@ -8,7 +8,7 @@ if(!isset($_SESSION['user'])) {
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>KHU Theater User Page</title>
+  <title>NHC Theater User Page</title>
 
 
   <!-- CSS

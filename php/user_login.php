@@ -27,12 +27,17 @@ else {
 }
 while(odbc_fetch_row($result))
 {
+$user = odbc_fetch_row($result);
 $ID = odbc_result($result, 1);
 $PW = odbc_result($result, 2);
-$row = odbc_fetch_array($result);
 
-  echo "$ID $PW";
+  //echo "$ID $PW";
 }
+
+
+session_start();
+$_SESSION['user'] = $user;
+
 
 if (!isset($user)) {
   echo "<script>alert('User Login failed.');history.back();</script>";
@@ -42,10 +47,6 @@ else
 {
   alert("Login Success");
 }
-
-
-$_SESSION['user'] = $user;
-
 
 odbc_close($con);
 

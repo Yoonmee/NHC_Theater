@@ -13,23 +13,25 @@ if(!isset($user_id) || !isset($user_pw))
   exit;
 
 //find
-$sql = "SELECT * FROM NHC_USER WHERE ID='{$user_id}' AND PASSWORD='{$user_pw}'";
-$result = odbc_do($con, $sql);
+$sql = "SELECT * FROM NHC_USER WHERE id='{$user_id}' AND password='{$user_pw}'";
+$result = odbc_exec($con, $sql);
 //$user = odbc_fetch_row($result);
-echo "$sql";
-echo "$result";
-
-odbc_fetch_row($result);
-
-if(odbc_num_rows($result) == 0)
+if(!$result)
 {
-  echo"tq";
+  echo "not result";
 }
 
-$ID = odbc_result($result, 1);
-$PW = odbc_result($result, 2);
+while(odbc_fetch_row($result))
+{
+  $ID = odbc_result($result, 1);
+  $PW = odbc_result($result, 2);
 
-echo "$ID $PW";
+  echo "$ID $PW";
+}
+
+
+
+
 
 /*
 if (!isset($user)) {

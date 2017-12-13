@@ -34,18 +34,20 @@ $row = odbc_fetch_array($result);
   echo "$ID $PW";
 }
 
-
-
-/*
 if (!isset($user)) {
   echo "<script>alert('User Login failed.');history.back();</script>";
   exit;
 }
-*/
+else
+{
+  alert("Login Success");
+}
+
 
 $_SESSION['user'] = $user;
+if()
 
 odbc_close($con);
 
-//header("Refresh:0; url=../user/");
+header("Refresh:0; url=../user/");
 ?>

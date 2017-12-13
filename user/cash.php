@@ -16,7 +16,7 @@ if(!isset($_SESSION['user_id'])) {
   <link rel="stylesheet" href="http://163.180.118.201/assets/css/bootstrap-theme.min.css">
 -->
   <!-- JS
-  <script src="http://163.180.118.201/assets/js/jquery-1.12.2.min.js"></script>
+
   <script src="http://163.180.118.201/assets/js/bootstrap.min.js"></script>
 -->
 
@@ -25,6 +25,8 @@ if(!isset($_SESSION['user_id'])) {
 
 <!-- Custom styles for this template -->
 <link href="../css/2-col-portfolio.css" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+
 
   <style>
   body {

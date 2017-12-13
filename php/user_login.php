@@ -21,14 +21,12 @@ if(!$result)
   echo "not result";
 }
 
-while(odbc_fetch_row($result))
-{
-  $ID = odbc_result($result, 1);
-  $PW = odbc_result($result, 2);
+$row = odbc_fetch_array($result);
 
-  echo "$ID $PW";
-}
+$ID = $row['id'];
+$PW = $row['password'];
 
+echo "$ID $PW";
 
 
 

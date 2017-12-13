@@ -20,7 +20,7 @@ if (!isset($user)) {
   exit;
 }
 
-$_SESSION['user'] = $user;
+$_SESSION['user_id'] = $user_id;
 
 odbc_close($con);
 

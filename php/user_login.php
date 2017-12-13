@@ -34,6 +34,11 @@ $_SESSION['user_email'] = $user['email'];
 $_SESSION['user_grade'] = $user['grade'];
 $_SESSION['user_cash'] = $user['cash'];
 
+echo $_SESSION['user_id'];
+echo $_SESSION['user_name'];
+echo $_SESSION['user_email'];
+echo $_SESSION['user_grade'];
+echo $_SESSION['user_cash'];
 
 if (!isset($user)) {
   echo "<script>alert('User Login failed.');history.back();</script>";
@@ -42,5 +47,5 @@ if (!isset($user)) {
 
 odbc_close($con);
 
-header("Refresh:0; url=../user/");
+//header("Refresh:0; url=../user/");
 ?>

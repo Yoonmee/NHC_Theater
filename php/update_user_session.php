@@ -6,7 +6,7 @@ include('config.php');
 //   echo "Failed to connect to MariaDB: " . mysqli_connect_error();
 // }
 
-$user_id = $_SESSION['user']['id'];
+$user_id = $_SESSION['user_id'];
 if(!isset($user_id))
   exit;
 

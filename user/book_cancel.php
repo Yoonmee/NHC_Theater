@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION['user'])) {
+if(!isset($_SESSION['user_id'])) {
     header("location: ../index.php");
 }
 ?>
@@ -45,7 +45,7 @@ if(!isset($_SESSION['user'])) {
   <script>
   $(function() {
     //예매내역 로드
-    $.post('../php/book_list.php', {id: "<?php echo $_SESSION['user']['id']; ?>"}, function(data, textStatus, xhr) {
+    $.post('../php/book_list.php', {id: "<?php echo $_SESSION['user_id']; ?>"}, function(data, textStatus, xhr) {
       if (textStatus == "success")
       {
         var books = JSON.parse(data);
@@ -68,7 +68,7 @@ if(!isset($_SESSION['user'])) {
       return false;
     }
 
-    $.post('../php/book_cancel.php', {user_id: "<?php echo $_SESSION['user']['id']; ?>", book_id: bookID}, function(data, textStatus, xhr) {
+    $.post('../php/book_cancel.php', {user_id: "<?php echo $_SESSION['user_id']; ?>", book_id: bookID}, function(data, textStatus, xhr) {
       alert("취소되었습니다");
 
       //update session

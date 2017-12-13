@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION['admin'])) {
+if(!isset($_SESSION['admin_id'])) {
     header("location: ../index.php");
 }
 ?>
@@ -92,7 +92,7 @@ if(!isset($_SESSION['admin'])) {
 
     console.log(datetime);
 
-    $.post('../php/add_screen.php', {play_id: playID, theater_id: "<?php echo $_SESSION['admin']['theater_id']; ?>", price: play_price, seats: play_seats, time: datetime}, function(data, textStatus, xhr) {
+    $.post('../php/add_screen.php', {play_id: playID, theater_id: "1", price: play_price, seats: play_seats, time: datetime}, function(data, textStatus, xhr) {
       console.log(data);
       console.log(textStatus);
       console.log(xhr);

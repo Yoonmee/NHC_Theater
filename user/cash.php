@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION['user'])) {
+if(!isset($_SESSION['user_id'])) {
     header("location: ../index.php");
 }
 ?>
@@ -49,7 +49,7 @@ if(!isset($_SESSION['user'])) {
 
     $.post('../php/fill_cash.php', {
         cash: in_cash,
-        user_id: "<?php echo $_SESSION['user']['id']; ?>"
+        user_id: "<?php echo $_SESSION['user_id']; ?>"
       }, function(data, textStatus, xhr) {
         //alert("data: ", data);
         if (textStatus == "success")

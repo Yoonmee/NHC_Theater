@@ -9,14 +9,15 @@ if(!isset($user_id) || !isset($user_pw))
 //find
 $sql = "SELECT * FROM NHC_USER WHERE TYPE='2' and ID='$user_id' AND PASSWORD='$user_pw'";
 $result = odbc_do($con, $sql);
-$admin = odbc_fetch_row($result);
+$admin = odbc_fetch_array($result);
 
 if (!isset($admin)) {
    echo "<script>alert('Admin Login failed.');history.back();</script>";
    exit;
 }
 
-$_SESSION['admin'] = $admin;
+$_SESSION['admin_id'] = $admin['id'];
+$_SESSION['admin_name'] = $admin['name'];
 
 odbc_close($con);
 

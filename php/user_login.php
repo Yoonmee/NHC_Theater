@@ -26,15 +26,13 @@ else {
   echo odbc_num_rows($result);
 }
 
-$user = array();
+$user = odbc_fetch_array($result);
 
-while($r = odbc_fetch_row($result))
-{
-  $user[] = $r;
-  //echo "$ID $PW";
-}
-
-$_SESSION['user'] = $user;
+$_SESSION['user_id'] = $user['id'];
+$_SESSION['user_name'] = $user['name'];
+$_SESSION['user_email'] = $user['email'];
+$_SESSION['user_grade'] = $user['grade'];
+$_SESSION['user_cash'] = $user['cash'];
 
 
 if (!isset($user)) {

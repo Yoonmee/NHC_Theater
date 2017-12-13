@@ -26,7 +26,7 @@ if(!isset($_SESSION['admin_id'])) {
   <script src="http://163.180.118.201/assets/js/jquery-1.12.2.min.js"></script>
   <script src="http://163.180.118.201/assets/js/bootstrap.min.js"></script>
 -->
-<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.2.js"> </script>
   <style>
   body {
     /* Margin bottom by footer height */
@@ -45,32 +45,14 @@ if(!isset($_SESSION['admin_id'])) {
   <script>
   $(function() {
     //play DB 목록에 있으면서 현재 상영중이지 않은 연극 목록들 Load
-    //
-    // $.post('../php/available_plays.php', {theater_id: "1"}, function(data, textStatus, xhr) {
-    //   console.log("data: ", data);
-    //   alert(data);
-    //   if (textStatus == "success")
-    //   {
-    //     var plays = JSON.parse(data);
-    //     var option = $('#play');
-    //
-    //     $.each(plays, function(i, val) {
-    //       option.append($('<option>', {
-    //         value: val.ID,
-    //         text: "제목: " + val.NAME + ", 상영시간(분): " + val.RUNNINGTIME
-    //       }, '</option>'));
-    //     });
-    //   }
-    // });
 
     $.post('../php/available_plays.php', {theater_id: "1"}, function(data, textStatus, xhr) {
       console.log("data: ", data);
-
+      alert(data);
       if (textStatus == "success")
       {
-        //var plays = JSON.parse(data);
+        var plays = JSON.parse(data);
         var option = $('#play');
-        var plays = <?php echo json_encode(unserialize($data))?>;
 
         $.each(plays, function(i, val) {
           option.append($('<option>', {
@@ -80,6 +62,24 @@ if(!isset($_SESSION['admin_id'])) {
         });
       }
     });
+
+    // $.post('../php/available_plays.php', {theater_id: "1"}, function(data, textStatus, xhr) {
+    //   console.log("data: ", data);
+    //
+    //   if (textStatus == "success")
+    //   {
+    //     //var plays = JSON.parse(data);
+    //     var option = $('#play');
+        // var plays = <php echo json_encode(unserialize($data))?>;
+    //
+    //     $.each(plays, function(i, val) {
+    //       option.append($('<option>', {
+    //         value: val.ID,
+    //         text: "제목: " + val.NAME + ", 상영시간(분): " + val.RUNNINGTIME
+    //       }, '</option>'));
+    //     });
+    //   }
+    // });
 
   });
 

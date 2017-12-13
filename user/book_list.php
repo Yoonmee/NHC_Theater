@@ -26,6 +26,7 @@ if(!isset($_SESSION['user_id'])) {
   <script src="http://163.180.118.201/assets/js/jquery-1.12.2.min.js"></script>
   <script src="http://163.180.118.201/assets/js/bootstrap.min.js"></script>
 -->
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 
   <style>
   body {
@@ -122,7 +123,7 @@ if(!isset($_SESSION['user_id'])) {
 -->
 
   <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
 </body>
 </html>

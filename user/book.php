@@ -26,7 +26,7 @@ if(!isset($_SESSION['user_id'])) {
   <script src="http://163.180.118.201/assets/js/jquery-1.12.2.min.js"></script>
   <script src="http://163.180.118.201/assets/js/bootstrap.min.js"></script>
 -->
-
+  <script src="http://code.jquery.com/jquery-1.10.2.js"> </script>
   <style>
   body {
     /* Margin bottom by footer height */
@@ -42,7 +42,9 @@ if(!isset($_SESSION['user_id'])) {
   }
   </style>
 
-  <script src="http://code.jquery.com/jquery-1.10.2.js">
+
+  <script>
+
   $(function() {
     //상영중인 연극들 갖고와서 select 태그에 추가
     $.post('../php/query.php', {query: "SELECT * FROM NHC_SCREENINGPLAY"}, function(data, textStatus, xhr) {
@@ -69,7 +71,8 @@ if(!isset($_SESSION['user_id'])) {
 
   function book() {
     //예매
-    var screenID = $('#screen').val();
+    // var screenID = $('#screen').val();
+    var screenID = 1;
     if (screenID == -1)
     {
       alert("예매할 연극을 선택해주세요");
@@ -141,7 +144,7 @@ if(!isset($_SESSION['user_id'])) {
 -->
 
   <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
 </body>
 </html>

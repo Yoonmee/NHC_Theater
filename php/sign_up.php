@@ -115,8 +115,8 @@ if(isset($_SESSION['user_id'])) {
         <input class="form-control" type="text" name="Name">
       </div>
       <div class="form-group" id="inputPhone">
-        Phone:
-        <input class="form-control" type="text" name="Phone" placeholder="-를 빼고 입력하세요.">
+        E-mail:
+        <input class="form-control" type="text" name="Email">
       </div>
 
       <p align="center">

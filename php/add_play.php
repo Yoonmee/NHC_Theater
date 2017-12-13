@@ -6,10 +6,14 @@ $play_name = $_POST['play_name'];
 $runningtime = $_POST['runningtime'];
 $price = $_POST['price'];
 
-$screen_time = date("Y-m-d", strtotime($runningtime));
+//$screen_time = date("Y-m-d", strtotime($runningtime));
 
-$sql = "INSERT INTO NHC_PLAY(ID, NAME, RUNNINGTIME, PRICE) VALUES ('{$play_id}', '{$play_name}', '{$screen_time}', '{$price}')";
-$result = odbc_exec($con, $sql);
+//echo mb_internal_encoding();
+//$play_name = mb_convert_encoding ( $play_name , "UTF-16" );
+$sql = "INSERT INTO NHC_PLAY(ID, NAME, RUNNINGTIME, PRICE) VALUES ('{$play_id}', '{$play_name}', '{$runningtime}', '{$price}')";
+
+echo $sql;
+$result = odbc_do($con, $sql);
 if(!$result)
 {
   echo "not result";
@@ -23,6 +27,4 @@ else {
 odbc_close($con);
 ?>
 
-<!--
 <meta http-equiv="refresh" content="0;url=../admin/index.php">
--->

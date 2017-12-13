@@ -42,5 +42,5 @@ if (!isset($user)) {
 
 odbc_close($con);
 
-header("Refresh:0; url=../user/");
+//header("Refresh:0; url=../user/");
 ?>

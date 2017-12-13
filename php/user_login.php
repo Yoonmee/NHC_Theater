@@ -16,7 +16,6 @@ if(!isset($user_id) || !isset($user_pw))
 $sql = "SELECT * FROM NHC_USER WHERE id='{$user_id}' AND password='{$user_pw}'";
 $result = odbc_exec($con, $sql) or die(odbc_errormsg());
 
-;
 //$user = odbc_fetch_row($result);
 if(!$result)
 {

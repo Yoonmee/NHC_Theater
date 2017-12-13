@@ -20,19 +20,29 @@ $result = odbc_exec($con, $sql) or die(odbc_errormsg());
 if(!$result)
 {
   echo "not result";
+  exit;
 }
 else {
   echo "$result";
   echo odbc_num_rows($result);
 }
 
+while(odbc_fetch_row($result))
+{
+  $id = odbc_result($result, 1);
+  $name = odbc_result($result, 4);
+  $email = odbc_result($result, 5);
+  $grade = odbc_result($result, 7);
+  $cash = odbc_result($result, 8);
+}
+
 $user = odbc_fetch_array($result);
 
-$_SESSION['user_id'] = $user['id'];
-$_SESSION['user_name'] = $user['name'];
-$_SESSION['user_email'] = $user['email'];
-$_SESSION['user_grade'] = $user['grade'];
-$_SESSION['user_cash'] = $user['cash'];
+$_SESSION['user_id'] = $id;
+$_SESSION['user_name'] = $name;
+$_SESSION['user_email'] = $email;
+$_SESSION['user_grade'] = $grade;
+$_SESSION['user_cash'] = $cash;
 
 echo $_SESSION['user_id'];
 echo $_SESSION['user_name'];

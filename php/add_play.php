@@ -27,6 +27,4 @@ else {
 odbc_close($con);
 ?>
 
-<!--
 <meta http-equiv="refresh" content="0;url=../admin/index.php">
--->

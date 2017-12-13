@@ -16,10 +16,10 @@ function SendMail( $ToEmail, $MessageHTML, $MessageTEXT ) {
   $Mail->Priority    = 1; // Highest priority - Email priority (1 = High, 3 = Normal, 5 = low)
   $Mail->CharSet     = 'UTF-8';
   $Mail->Encoding    = '8bit';
-  $Mail->Subject     = 'Test Email Using Gmail';
+  $Mail->Subject     = '예매내역 발송';
   $Mail->ContentType = 'text/html; charset=utf-8\r\n';
   $Mail->From        = 'ymhwang119@gmail.com';
-  $Mail->FromName    = 'ymhwang119@naver.com';
+  $Mail->FromName    = 'NHC_Theater Admin';
   $Mail->WordWrap    = 900; // RFC 2822 Compliant for Max 998 characters per line
 
   $Mail->AddAddress( $ToEmail ); // To:
@@ -37,10 +37,11 @@ function SendMail( $ToEmail, $MessageHTML, $MessageTEXT ) {
   }
 }
 
-$ToEmail = 'dbsals0618@naver.com';
-$ToName  = 'Name';
-$MessageHTML = "HI";
+$ToEmail = $_POST['user_email'];
+$ToName  = $_POST['user_name'];
+$MessageHTML = $_POST['user_name'].'예매내역';
 $MessageTEXT = "test";
+
 
 $Send = SendMail( $ToEmail, $MessageHTML, $MessageTEXT );
 if ( $Send ) {

@@ -25,12 +25,12 @@ else {
   echo "$result";
   echo odbc_num_rows($result);
 }
-while(odbc_fetch_row($result))
-{
-$user = odbc_fetch_row($result);
-$ID = odbc_result($result, 1);
-$PW = odbc_result($result, 2);
 
+$user = array();
+
+while($r = odbc_fetch_row($result))
+{
+  $user[] = $r;
   //echo "$ID $PW";
 }
 

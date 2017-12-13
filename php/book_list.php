@@ -2,7 +2,7 @@
 include('config.php');
 
 $user_id = $_POST['id'];
-$sql = "SELECT * FROM BOOK WHERE USERID = '{$user_id}'";
+$sql = "SELECT * FROM NHC_BOOK WHERE USERID = '{$user_id}'";
 $result = odbc_do($con, $sql);
 $rows = array();
 

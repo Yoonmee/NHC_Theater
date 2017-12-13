@@ -5,7 +5,7 @@ $user_id = $_POST['user_id'];
 $book_id = $_POST['book_id'];
 
 //screen id 갖고오기
-$sql = "SELECT SCREENID FROM BOOK WHERE ID='{$book_id}'";
+$sql = "SELECT SCREENID FROM NHC_BOOK WHERE ID='{$book_id}'";
 $result = odbc_do($con, $sql);
 $row = odbc_fetch_assoc($result);
 $screen_id = $row['SCREENID'];

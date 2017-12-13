@@ -14,20 +14,25 @@ if(!isset($user_id) || !isset($user_pw))
 
 //find
 $sql = "SELECT * FROM NHC_USER WHERE id='{$user_id}' AND password='{$user_pw}'";
-$result = odbc_exec($con, $sql);
+$result = odbc_exec($con, $sql) or die(odbc_errormsg());
+;
 //$user = odbc_fetch_row($result);
 if(!$result)
 {
   echo "not result";
 }
-
+else {
+  echo "$result";
+  echo odbc_num_rows($result);
+}
+while(odbc_fetch_row($result))
+{
+  $ID = odbc_result($result, 1);
+  $PW = odbc_result($result, 2);
 $row = odbc_fetch_array($result);
 
-$ID = $row['id'];
-$PW = $row['password'];
-
-echo "$ID $PW";
-
+  echo "$ID $PW";
+}
 
 
 

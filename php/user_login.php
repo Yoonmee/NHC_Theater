@@ -34,8 +34,6 @@ $PW = odbc_result($result, 2);
   //echo "$ID $PW";
 }
 
-
-session_start();
 $_SESSION['user'] = $user;
 
 

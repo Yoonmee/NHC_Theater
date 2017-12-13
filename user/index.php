@@ -72,7 +72,7 @@ if(!isset($_SESSION['user'])) {
     <!-- <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> User Page</h2> -->
     <ol class="breadcrumb">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <li class="active"><?php echo $members['user']['name'] ?></li>
+      <li class="active"><?php echo $_SESSION['user']['name'] ?></li>
 
     </ol>
     <hr>

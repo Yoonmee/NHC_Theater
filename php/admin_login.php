@@ -37,5 +37,5 @@ $_SESSION['admin_name'] = $name;
 
 odbc_close($con);
 
-//header("Refresh:0; url=../admin/");
+header("Refresh:0; url=../admin/");
 ?>

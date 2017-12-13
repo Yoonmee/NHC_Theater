@@ -8,7 +8,7 @@
 
   include("config.php");
 
-  $sql = "INSERT INTO NHC_USER (ID, PASSWORD, NAME, EMAIL) VALUES('".$_POST['ID']."', '".$_POST['Password']."','".$_POST['Name']."','".$_POST['Email']."')";
+  $sql = "INSERT INTO NHC_USER (ID, PASSWORD, TYPE, NAME, EMAIL) VALUES('".$_POST['ID']."', '".$_POST['Password']."','".$_POST['Name']."','".$_POST['Email']."')";
   $result = odbc_exec($con, $sql);
  ?>
 

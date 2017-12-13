@@ -83,7 +83,7 @@ if(!isset($_SESSION['user_id'])) {
     echo "{$_SESSION['user_id']}<br>";
     echo "등급: {$_SESSION['user_grade']}<br>";
     echo "메일: {$_SESSION['user_email']}<br>";
-    echo "잔액: $_SESSION['user_cash']<br>";
+    echo "잔액: {$_SESSION['user_cash']}<br>";
     ?>
     <hr>
 

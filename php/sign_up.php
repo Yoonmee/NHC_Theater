@@ -101,7 +101,7 @@ if(isset($_SESSION['user'])) {
 
     <hr>
     <!-- 너맘대로 채워넣으세여 -->
-    <form class="form-group" action="index.html" name="signupForm" method="post">
+    <form class="form-group" action="sign_up_check.php" name="signupForm" method="post">
 
       <div class="form-group" id="inputID">
         ID:

@@ -17,7 +17,7 @@ $result = @odbc_do($con, "BEGIN");
 // }
 
 
-$cash = $_POST['cash'];
+$cash = $_POST['user_cash'];
 $id = $_POST['user_id'];
 $sql = "UPDATE NHC_USER SET cash = cash + $cash WHERE id='$id'";
 $result = @odbc_do($con, $sql);

@@ -79,11 +79,11 @@ if(!isset($_SESSION['user_id'])) {
 
     <?php
     #print user's info
-    echo "{$_SESSION['user_name']}님";
-    echo "{$_SESSION['user_id']}";
-    echo "등급: {$_SESSION['user_grade']}";
-    echo "메일: {$_SESSION['user_mail']}";
-    echo "잔액: {$_SESSION['user_cash']}";
+    echo "{$_SESSION['user_name']}님<br>";
+    echo "{$_SESSION['user_id']}<br>";
+    echo "등급: {$_SESSION['user_grade']}<br>";
+    echo "메일: {$_SESSION['user_email']}<br>";
+    echo "잔액: $_SESSION['user_cash']<br>";
     ?>
     <hr>
 

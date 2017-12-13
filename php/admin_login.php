@@ -7,7 +7,7 @@ if(!isset($user_id) || !isset($user_pw))
    exit;
 
 //find
-$sql = "SELECT * FROM NHC_USER WHERE TYPE=2 and ID='$user_id' AND PASSWORD='$user_pw'";
+$sql = "SELECT * FROM NHC_USER WHERE TYPE=2 and ID='{$user_id}' AND PASSWORD='{$user_pw}'";
 $result = odbc_exec($con, $sql) or die(odbc_errormsg());
 
 if(!$result)

@@ -82,8 +82,7 @@ if(!isset($_SESSION['user_id'])) {
     $.post('../php/book.php', {user_id: "<?php echo $_SESSION['user_id']; ?>", screen_id: screenID}, function(data, textStatus, xhr) {
       /*optional stuff to do after success */
       alert("예매되었습니다.");
-
-      //update session
+        //update session
       window.location.href = '../php/update_user_session.php';
     });
   }

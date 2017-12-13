@@ -102,22 +102,22 @@ if(!isset($_SESSION['admin_id'])) {
         PlayID:
         <input class="form-control" type="text" name="play_id">
       </div>
-      <div class="form-group" id="inputPassword">
+      <div class="form-group" id="inputPlayName">
         Name:
         <input class="form-control" type="text" name="play_name">
       </div>
-      <div class="form-group" id="inputName">
+      <div class="form-group" id="inputRunningTime">
         Running Time:
         <input class="form-control" type="text" name="runningtime">
       </div>
-      <div class="form-group" id="inputPhone">
+      <div class="form-group" id="inputPrice">
         Price:
         <input class="form-control" type="text" name="price">
       </div>
 
       <p align="center">
         <input type="submit" class="btn btn-lg btn-primary btn-block" value="연극 등록" style="margin-right: 20px;">
-        <input type="reset" class="btn btn-lg btn-primary btn-block" value="취소" onclick='return goPrevPage();'>
+        <input type="reset" class="btn btn-lg btn-default btn-block" value="취소" onclick='return goPrevPage();'>
       </p>
     </form>
 

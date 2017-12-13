@@ -22,29 +22,48 @@ if(!isset($_SESSION['admin_id'])) {
   <link rel="stylesheet" href="http://163.180.118.201/assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="http://163.180.118.201/assets/css/bootstrap-theme.min.css">
 -->
+
   <!-- JS
   <script src="http://163.180.118.201/assets/js/jquery-1.12.2.min.js"></script>
   <script src="http://163.180.118.201/assets/js/bootstrap.min.js"></script>
 -->
 
   <style>
-  body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
+  .form-signin .checkbox {
+    font-weight: normal;
   }
-  .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 60px;
-    background-color: #f5f5f5;
+  .form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
   </style>
 
   <script>
+    function goPrevPage() {
+      history.back();
+      return true;
+    }
   </script>
 </head>
+
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
@@ -68,39 +87,45 @@ if(!isset($_SESSION['admin_id'])) {
   </nav>
 
   <div class="container">
-    <!-- <h2><span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span> Admin Page</h2> -->
+    <!-- <h2><span class="glyphicon glyphicon-film" aria-hidden="true"></span>Sign Up</h2> -->
 
     <!-- breadcrumb -->
     <ol class="breadcrumb">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <li class="active">Admin Page</li>
+      <li class="active">Add Play</li>
     </ol>
-    <hr>
 
-    <?php
-    #print admin's info
-    echo "{$_SESSION['admin_name']}님";
-    echo "{$_SESSION['admin_id']}";
-    ?>
     <hr>
+    <form class="form-group" action="../php/add_play.php" name="PlayAddForm" method="post">
 
-    <button class="btn btn-lg btn-primary btn-block" onclick="location.href='./play_add.php';">새로운 연극 등록</button>
-    <button class="btn btn-lg btn-primary btn-block" onclick="location.href='./screen_add.php';">상영 연극 추가</button>
-    <!-- <button class="btn btn-lg btn-primary btn-block" onclick="location.href='./screen_list.php';">예매 현황 출력</button> -->
+      <div class="form-group" id="inputPlayID">
+        PlayID:
+        <input class="form-control" type="text" name="play_id">
+      </div>
+      <div class="form-group" id="inputPassword">
+        Name:
+        <input class="form-control" type="text" name="play_name">
+      </div>
+      <div class="form-group" id="inputName">
+        Running Time:
+        <input class="form-control" type="text" name="runningtime">
+      </div>
+      <div class="form-group" id="inputPhone">
+        Price:
+        <input class="form-control" type="text" name="price">
+      </div>
+
+      <p align="center">
+        <input type="submit" class="btn btn-lg btn-primary btn-block" value="연극 등록" style="margin-right: 20px;">
+        <input type="reset" class="btn btn-lg btn-primary btn-block" value="취소" onclick='return goPrevPage();'>
+      </p>
+    </form>
+
+
   </div>
 
-<!--
-  <footer class="footer">
-    <div class="container">
-      <button type="button" class="btn btn-default" onclick="location.href='../php/logout.php';">
-        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout
-      </button>
-    </div>
-  </footer>
--->
-
-<!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

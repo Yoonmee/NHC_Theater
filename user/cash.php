@@ -20,6 +20,12 @@ if(!isset($_SESSION['user_id'])) {
   <script src="http://163.180.118.201/assets/js/bootstrap.min.js"></script>
 -->
 
+<!-- Bootstrap core CSS -->
+<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="../css/2-col-portfolio.css" rel="stylesheet">
+
   <style>
   body {
     /* Margin bottom by footer height */
@@ -37,6 +43,7 @@ if(!isset($_SESSION['user_id'])) {
 
   <script>
   function fill_cash() {
+    alert("hi");
     var fill = $('#fillcash');
     var in_cash = fill.val();
     if (in_cash <= 0) {

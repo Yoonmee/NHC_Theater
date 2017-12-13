@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION['admin'])) {
+if(!isset($_SESSION['admin_id'])) {
     header("location: ../index.php");
 }
 ?>
@@ -79,9 +79,8 @@ if(!isset($_SESSION['admin'])) {
 
     <?php
     #print admin's info
-    echo "<pre>";
-    print_r($_SESSION['admin']);
-    echo "</pre>";
+    echo "{$_SESSION['admin_name']}님";
+    echo "{$_SESSION['admin_id']}";
     ?>
     <hr>
 

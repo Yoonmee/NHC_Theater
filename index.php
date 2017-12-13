@@ -1,9 +1,9 @@
 <?php
-if(isset($_SESSION['admin'])) {
+if(isset($_SESSION['admin_id'])) {
     header("location: admin/");
 }
 
-if(isset($_SESSION['user'])) {
+if(isset($_SESSION['user_id'])) {
     header("location: user/");
 }
 ?>

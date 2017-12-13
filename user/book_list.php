@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION['user'])) {
+if(!isset($_SESSION['user_id'])) {
     header("location: ../index.php");
 }
 ?>
@@ -45,7 +45,7 @@ if(!isset($_SESSION['user'])) {
   <script>
   $(function() {
     //예매목록 불러오기
-    $.post('../php/book_list.php', {id: "<?php echo $_SESSION['user']['id']; ?>"}, function(data, textStatus, xhr) {
+    $.post('../php/book_list.php', {id: "<?php echo $_SESSION['user_id']; ?>"}, function(data, textStatus, xhr) {
       if (textStatus == "success")
       {
         var table = $('#book_table');

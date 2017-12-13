@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION['user'])) {
+if(!isset($_SESSION['user_id'])) {
     header("location: ../index.php");
 }
 ?>
@@ -72,16 +72,18 @@ if(!isset($_SESSION['user'])) {
     <!-- <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> User Page</h2> -->
     <ol class="breadcrumb">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <li class="active"><?php echo $_SESSION['user']['name'] ?></li>
+      <li class="active"><?php echo $_SESSION['user_name'] ?></li>
 
     </ol>
     <hr>
 
     <?php
     #print user's info
-    echo "<pre>";
-    print_r($_SESSION['user']);
-    echo "</pre>";
+    echo "{$_SESSION['user_name']}님<br>";
+    echo "{$_SESSION['user_id']}<br>";
+    echo "등급: {$_SESSION['user_grade']}<br>";
+    echo "메일: {$_SESSION['user_email']}<br>";
+    echo "잔액: {$_SESSION['user_cash']}<br>";
     ?>
     <hr>
 

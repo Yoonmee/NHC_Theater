@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION['user'])) {
+if(!isset($_SESSION['user_id'])) {
     header("location: ../index.php");
 }
 ?>
@@ -76,7 +76,7 @@ if(!isset($_SESSION['user'])) {
       return false;
     }
 
-    $.post('../php/book.php', {user_id: "<?php echo $_SESSION['user']['id']; ?>", screen_id: screenID}, function(data, textStatus, xhr) {
+    $.post('../php/book.php', {user_id: "<?php echo $_SESSION['user_id']; ?>", screen_id: screenID}, function(data, textStatus, xhr) {
       /*optional stuff to do after success */
       alert("예매되었습니다.");
 

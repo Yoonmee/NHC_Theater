@@ -121,8 +121,8 @@ if(isset($_SESSION['user'])) {
       </div>
 
       <p align="center">
-        <input type="submit" value="회원가입" style="margin-right: 20px; width: 80px;">
-        <input type="reset" value="취소" onclick='return goPrevPage();' style="width: 80px;">
+        <input type="submit" class="btn btn-lg btn-primary btn-block" value="회원가입" style="margin-right: 20px;">
+        <input type="reset" class="btn btn-lg btn-primary btn-block" value="취소" onclick='return goPrevPage();'>
       </p>
     </form>
 

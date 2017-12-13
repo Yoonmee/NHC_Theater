@@ -34,7 +34,7 @@ while($r = odbc_fetch_row($result))
   //echo "$ID $PW";
 }
 
-echo"$user['ID']";
+//echo"$user['ID']";
 
 $_SESSION['user'] = $user;
 
@@ -46,5 +46,5 @@ if (!isset($user)) {
 
 odbc_close($con);
 
-//header("Refresh:0; url=../user/");
+header("Refresh:0; url=../user/");
 ?>

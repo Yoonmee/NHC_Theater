@@ -17,12 +17,12 @@ class Sendmail {
     /* smtp 의 호스트 설정 : 아래는 gmail 일경우 */
     var $host="ssl://smtp.gmail.com";
 	/* smtp 계정 아이디 입력 */
-    var $smtp_id="example@gmail.com";
+    var $smtp_id="ymhwang119@gmail.com";
     /* smtp 계정 비밀번호 입력 */
-	var $smtp_pw="password";
+	var $smtp_pw="gkrtmqrl11";
 
     /* 디버그모드 - 활성 :1, 비활성 : 0; */
-    var $debug = 0; 
+    var $debug = 1;
 	/* 문자 인코딩 종류 설정*/
     var $charset="UTF-8";
 	/* 메일의 기본 타입을 설정 */

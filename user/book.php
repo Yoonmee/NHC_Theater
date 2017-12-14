@@ -47,7 +47,7 @@ if(!isset($_SESSION['user_id'])) {
 
   $(function() {
     //상영중인 연극들 갖고와서 select 태그에 추가
-    $.post('../php/query.php', {query: "SELECT * FROM NHC_SCREENINGPLAY"}, function(data, textStatus, xhr) {
+    $.post('../php/query.php', {query: "SELECT SP.ID, SP.THEATERID, SP.PLAYID, P.SCREENTIME, P.PRICE FROM NHC_SCREENINGPLAY SP, PLAY P WHERE SP.PLAYID = P.ID"}, function(data, textStatus, xhr) {
       //alert("data: " + data + "\ntextStatus: " + textStatus + "\nxhr: " + xhr);
       console.log("data: ", data);
       if (textStatus == "success")
@@ -57,12 +57,12 @@ if(!isset($_SESSION['user_id'])) {
 
         $.each(screens, function(i, val) {
           //정원 초과
-          if (Number(val.CURRENTBOOK) >= Number(val.MAXBOOK))
-            return true;
+        //  if (Number(val.CURRENTBOOK) >= Number(val.MAXBOOK))
+          //  return true;
 
           option.append($('<option>', {
-            value: val.ID,
-            text: "극장ID: " + val.THEATERID + ", 연극ID: " + val.PLAYID + ", 정원: " + val.CURRENTBOOK + "/" + val.MAXBOOK + ", 상영시간: " + val.SCREENTIME + ", 가격: " + val.PRICE
+            value: val['ID'],
+            text: "극장ID: " + val['THEATERID'] + ", 연극ID: " + val['PLAYID'] + ", 상영시간: " + val['SCREENTIME'] + ", 가격: " + val['PRICE']
           }));
         });
       }

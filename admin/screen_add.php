@@ -48,20 +48,20 @@ if(!isset($_SESSION['admin_id'])) {
 
     $.post('../php/available_plays.php', {theater_id: "1"}, function(data, textStatus, xhr) {
       console.log("data: ", data);
-      alert(data);
+      //alert(data);
       if (textStatus == "success")
       {
         var plays = JSON.parse(data);
         var option = $('#play');
-        console.log(plays);
+        //console.log(plays);
 
         $.each(plays, function(i, val) {
           console.log(val);
-          console.log(val.NAME);
-          console.log(val.RUNNINGTIME);
+          //console.log(val.NAME);
+          //console.log(val.RUNNINGTIME);
           option.append($('<option>', {
-            value: val.ID,
-            text: "제목: " + val.NAME + ", 상영시간(분): " + val.RUNNINGTIME
+            value: val['id'],
+            text: "제목: " + val['name'] + ", 상영시간(분): " + val['runningtime']
           }, '</option>'));
         });
       }

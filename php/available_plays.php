@@ -19,7 +19,7 @@ $rows = array();
    echo $name;
    echo $runningtime;
    echo $price;
-   $obj = {"id"=>$id, "name"=>$name, "runningtime"=>$runningtime, "price"=>$price};
+   $obj = array("id"=>$id, "name"=>$name, "runningtime"=>$runningtime, "price"=>$price);
    $rows[] = $obj;
  }
 /*

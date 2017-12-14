@@ -7,23 +7,25 @@ $sql = "SELECT * FROM NHC_PLAY";
 $result = odbc_do($con, $sql);
 //$rows = odbc_fetch_row($result);
 
-// while(odbc_fetch_row($result))
-// {
-//   $id = odbc_result($result, 1);
-//   $name = odbc_result($result, 2);
-//   $runningtime = odbc_result($result, 3);
-//   $price = odbc_result($result, 4);
-//   echo $id;
-//   echo $name;
-//   echo $runningtime;
-//   echo $price;
-// }
+ while(odbc_fetch_row($result))
+ {
+   $id = odbc_result($result, 1);
+   $name = odbc_result($result, 2);
+   $runningtime = odbc_result($result, 3);
+   $price = odbc_result($result, 4);
+   echo $id;
+   echo $name;
+   echo $runningtime;
+   echo $price;
+ }
 
 $rows = array();
 
 while ($r = odbc_fetch_row($result)) {
   $rows[] = $r;
 }
+
+var_dump($rows);
 
 echo json_encode($rows);
 

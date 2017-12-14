@@ -79,7 +79,7 @@ if(!isset($_SESSION['admin_id'])) {
 
     <?php
     #print admin's info
-    echo "{$_SESSION['admin_name']}님";
+    echo "{$_SESSION['admin_name']}님<br>";
     echo "{$_SESSION['admin_id']}";
     ?>
     <hr>

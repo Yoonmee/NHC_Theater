@@ -47,6 +47,7 @@ if(!isset($_SESSION['user_id'])) {
   $(function() {
     //예매목록 불러오기
     $.post('../php/book_list.php', {id: "<?php echo $_SESSION['user_id']; ?>"}, function(data, textStatus, xhr) {
+      console.log("data: ", data);
       if (textStatus == "success")
       {
         var table = $('#book_table');

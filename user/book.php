@@ -47,7 +47,7 @@ if(!isset($_SESSION['user_id'])) {
 
   $(function() {
     //상영중인 연극들 갖고와서 select 태그에 추가
-    $.post('../php/query.php', {query: "SELECT SP.ID, SP.THEATERID, SP.PLAYID, P.SCREENTIME, P.PRICE FROM NHC_SCREENINGPLAY SP, PLAY P WHERE SP.PLAYID = P.ID"}, function(data, textStatus, xhr) {
+    $.post('../php/query.php', {query: "SELECT SP.ID, SP.THEATERID, SP.PLAYID, P.RUNNINGTIME, P.PRICE FROM NHC_SCREENINGPLAY SP, NHC_PLAY P WHERE SP.PLAYID = P.ID"}, function(data, textStatus, xhr) {
       //alert("data: " + data + "\ntextStatus: " + textStatus + "\nxhr: " + xhr);
       console.log("data: ", data);
       if (textStatus == "success")
@@ -71,8 +71,8 @@ if(!isset($_SESSION['user_id'])) {
 
   function book() {
     //예매
-    // var screenID = $('#screen').val();
-    var screenID = 1;
+     var screenID = $('#screen').val();
+    //var screenID = 1;
     if (screenID == -1)
     {
       alert("예매할 연극을 선택해주세요");
@@ -81,6 +81,9 @@ if(!isset($_SESSION['user_id'])) {
 
     $.post('../php/book.php', {user_id: "<?php echo $_SESSION['user_id']; ?>", screen_id: screenID}, function(data, textStatus, xhr) {
       /*optional stuff to do after success */
+      console.log(data);
+      console.log(textStatus);
+      console.log(xhr);
       alert("예매되었습니다.");
         //update session
       window.location.href = '../php/update_user_session.php';

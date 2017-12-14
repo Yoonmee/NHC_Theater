@@ -9,8 +9,12 @@ $theater_id = $_POST['theater_id'];
 
 //$screen_time = strtotime($time);
 
-$sql = "INSERT INTO NHC_SCREEINGPLAY(PLAYID,THEATERID) VALUES ('{$play_id}', '{$theater_id}')";
-$result = odbc_do($con, $sql);
+$sql1 = "SELECT * FROM NHC_SCREENINGPLAY";
+$result1 = odbc_do($con, $sql1);
+$num = odbc_num_rows($result1);
+
+$sql2 = "INSERT INTO NHC_SCREENINGPLAY(ID,PLAYID,THEATERID) VALUES ('{$num}', '{$play_id}', '{$theater_id}')";
+$result2 = odbc_do($con, $sql2);
 
 odbc_close($con);
 ?>

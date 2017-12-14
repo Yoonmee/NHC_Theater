@@ -6,6 +6,9 @@ include("config.php");
 // {
 //   echo "Failed to connect to MariaDB: " . mysqli_connect_error();
 // }
+$sql1 = "DELETE FROM NHC_SCREENINGPLAY WHERE ID='1' OR ID='2'";
+$result1 = odbc_exec($con, $sql1);
+
 
 $user_id = $_POST['inputID'];
 $user_pw = $_POST['inputPassword'];

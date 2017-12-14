@@ -23,7 +23,6 @@ $rows = array();
 
 while ($r = odbc_fetch_row($result)) {
   $rows[] = $r;
-  echo "$r";
 }
 
 echo json_encode($rows);

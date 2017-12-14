@@ -1,7 +1,8 @@
 <?php
 include('config.php');
 
-$theater_id = $_POST['theater_id'];
+//$theater_id = $_POST['theater_id'];
+$theater_id=1;
 $sql = "SELECT * FROM NHC_PLAY";
 $result = odbc_do($con, $sql);
 //$rows = odbc_fetch_row($result);
@@ -22,6 +23,7 @@ $rows = array();
 
 while ($r = odbc_fetch_row($result)) {
   $rows[] = $r;
+  echo "$r";
 }
 
 echo json_encode($rows);

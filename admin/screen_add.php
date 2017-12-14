@@ -53,8 +53,12 @@ if(!isset($_SESSION['admin_id'])) {
       {
         var plays = JSON.parse(data);
         var option = $('#play');
+        console.log(plays);
 
         $.each(plays, function(i, val) {
+          console.log(val);
+          console.log(val.NAME);
+          console.log(val.RUNNINGTIME);
           option.append($('<option>', {
             value: val.ID,
             text: "제목: " + val.NAME + ", 상영시간(분): " + val.RUNNINGTIME

@@ -95,24 +95,10 @@ if(!isset($_SESSION['admin_id'])) {
       return false;
     }
 
-    var play_price = $('#price').val();
-    if (!play_price || play_price <= 0)
-    {
-      alert("가격을 확인해주세요");
-      return false;
-    }
-
     var play_seats = $('#seats').val();
     if (!play_seats)
     {
       alert("좌석을 입력해주세요");
-      return false;
-    }
-
-    var time = $('#screen_time').val();
-    if (!time)
-    {
-      alert("상영시간을 입력해주세요");
       return false;
     }
 
@@ -160,7 +146,6 @@ if(!isset($_SESSION['admin_id'])) {
     <!-- breadcrumb -->
     <ol class="breadcrumb">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <li><a href="./">Admin Page</a></li>
       <li class="active"> Add Screen</li>
     </ol>
     <hr>
@@ -174,20 +159,9 @@ if(!isset($_SESSION['admin_id'])) {
     </div>
 
     <div class="form-group">
-      <label for="price">가격 입력</label>
-      <input type="number" id="price" class="form-control" required></select>
-    </div>
-
-    <div class="form-group">
       <label for="seats">좌석 수 입력</label>
       <input type="number" id="seats" class="form-control" required></select>
     </div>
-
-    <div class="form-group">
-      <label for="screen_time">상영 시간 입력</label>
-      <input type="datetime-local" id="screen_time" class="form-control" required></select>
-    </div>
-
 
     <hr>
     <button class="btn btn-lg btn-primary btn-block" onclick="add_screen();">상영 연극 추가</button>
